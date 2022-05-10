@@ -7,7 +7,6 @@
 #define MAX_CHARGESTATE 80
 #define MAX_CHARGERATE 0.8
 
-
 int isBatteryChargeRateOk(float chargeRate)
 {
     if(chargeRate > MAX_CHARGERATE)
@@ -38,32 +37,14 @@ int isBatteryTemperatureOk(float temperature)
   return 1;
 }
 
-int batteryIsOk(float temperature, float soc, float chargeRate)
+int batteryIsOk(float temperature, float soc, float chargeRate) 
 {
-  int tempStatus = isBatteryTemperatureOk(temperature);
-  int socStatus = isBatteryChargeStateOk(soc);
-  int chargeRateStatus = isBatteryChargeRateOk(chargeRate);
-
-  if (tempStatus == 0 || socStatus == 0 || chargeRateStatus == 0)
+  if ((isBatteryTemperatureOk(temperature) == false) || (isBatteryChargeStateOk(soc) == false) || (isBatteryChargeRateOk(chargeRate) == false))
   {
     return 0;
   }
-
   return 1 ;
 }
-
-
-
-
 int main() {
-  assert(isBatteryTemperatureOk(25));
-  assert(!isBatteryTemperatureOk(50));
-  assert(!isBatteryTemperatureOk(-1));
-  assert(isBatteryChargeStateOk(25));
-  assert(!isBatteryChargeStateOk(90));
-  assert(!isBatteryChargeStateOk(10));
-  assert(!isBatteryChargeRateOk(1.0));
-  assert(!isBatteryChargeRateOk(0.8));
-  assert(isBatteryChargeRateOk(0.7));
   assert(batteryIsOk(25, 70, 0.7));
 }
