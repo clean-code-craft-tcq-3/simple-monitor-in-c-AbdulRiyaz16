@@ -55,9 +55,9 @@ int main() {
   assert(isBatteryChargeStateOk(25));
   assert(!isBatteryChargeStateOk(90));
   assert(!isBatteryChargeStateOk(10));
-  assert(isBatteryChargeRateOk(1.0));
+  assert(!isBatteryChargeRateOk(1.0));
   assert(!isBatteryChargeRateOk(0.8));
-  assert(!isBatteryChargeRateOk(0.7));
+  assert(isBatteryChargeRateOk(0.7));
   assert(batteryIsOk(25, 70, 0.7));
   assert(!batteryIsOk(50, 85, 0));
 }
