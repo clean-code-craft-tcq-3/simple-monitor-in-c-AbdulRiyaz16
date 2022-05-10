@@ -39,9 +39,9 @@ int isBatteryTemperatureOk(float temperature)
 }
 
 int batteryIsOk(float temperature, float soc, float chargeRate) {
-  int tempStatus = isTemperatureOk(temperature);
-  int socStatus = isSocOk(soc);
-  int chargeRateStatus = isChargeRateOk(chargeRate);
+  int tempStatus = isBatteryTemperatureOk(temperature);
+  int socStatus = isBatteryChargeStateOk(soc);
+  int chargeRateStatus = isBatteryChargeRateOk(chargeRate);
 
   if (tempStatus == 0 || socStatus == 0 || chargeRateStatus == 0)
   {
