@@ -37,14 +37,14 @@ int isBatteryTemperatureOk(float temperature)
   return 1;
 }
 
-int batteryIsOk(float temperature, float soc, float chargeRate) 
-{
-  if ((isBatteryTemperatureOk(temperature) == 0) || (isBatteryChargeStateOk(soc) == 0) || (isBatteryChargeRateOk(chargeRate) == 0))
-  {
-    return 0;
-  }
-  return 1 ;
-}
 int main() {
-  assert(batteryIsOk(25, 70, 0.7));
+  assert(isBatteryTemperatureOk(25));
+  assert(!isBatteryTemperatureOk(50));
+  assert(!isBatteryTemperatureOk(-1));
+  assert(isBatteryChargeStateOk(25));
+  assert(!isBatteryChargeStateOk(90));
+  assert(!isBatteryChargeStateOk(10));
+  assert(!isBatteryChargeRateOk(1.0));
+  assert(!isBatteryChargeRateOk(0.8));
+  assert(isBatteryChargeRateOk(0.7));
 }
