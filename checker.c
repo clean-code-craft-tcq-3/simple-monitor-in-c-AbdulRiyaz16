@@ -20,7 +20,7 @@ int isBatteryChargeRateOk(float chargeRate)
 
 int isBatteryChargeStateOk(float soc)
 {
-    if(soc < MIN_STATEOFCHARGE || soc > MAX_STATEOFCHARGE) 
+    if(soc < MIN_CHARGESTATE || soc > MAX_CHARGESTATE) 
     {
         printf("State of Charge out of range!\n");
         return 0;
