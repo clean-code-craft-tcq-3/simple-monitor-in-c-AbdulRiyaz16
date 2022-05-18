@@ -9,6 +9,19 @@
 #define MAX_CHARGESTATE 80
 #define MAX_CHARGERATE 0.8
 
+void toleranceCheck(float currentValue, float minValue, float maxValue)
+{
+    float toleranceValue=(WARNING_PERCENTAGE/MAX_PERCENTAGE)*maxValue;
+    if(currentValue >= minValue && currentValue <= minValue+toleranceValue) 
+    {
+        printf("Warning: Approaching discharge\n");
+    }
+    else if (currentValue <= MAX_CHARGERATE && currentValue >= maxValue-toleranceValue)
+    {
+        printf("Warning: Approaching charge-peak\n");
+    }
+}
+
 int isBatteryChargeRateOk(float chargeRate)
 {
     if(chargeRate > MAX_CHARGERATE)
