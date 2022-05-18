@@ -55,5 +55,5 @@ int main() {
   assert(!isBatteryChargeRateOk(1.0));
   assert(!isBatteryChargeRateOk(0.8));
   assert(isBatteryChargeRateOk(0.7));
-  batteryIsOk(25.0, 70.0, 0.7);
+  
 }
