@@ -12,7 +12,7 @@
 float toleranceCheck(float currentValue, float minValue, float maxValue)
 {
     float toleranceValue=(WARNING_PERCENTAGE/MAX_PERCENTAGE)*maxValue;
-    if(currentValue >= minvalue && currentValue <= minValue+toleranceValue) 
+    if(currentValue >= minValue && currentValue <= minValue+toleranceValue) 
     {
         printf("Warning: Approaching discharge\n");
     }
