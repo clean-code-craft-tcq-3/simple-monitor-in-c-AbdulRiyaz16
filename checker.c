@@ -17,11 +17,11 @@ float toleranceCheck(float maxlimit)
 int isBatteryChargeRateOk(float chargeRate)
 {
     float toleranceChargeRate=toleranceCheck(MAX_CHARGERATE);
-    if(chargeRate => MIN_TEMPERATURE && chargeRate <= MIN_TEMPERATURE+toleranceChargeRate) 
+    if(chargeRate >= MIN_TEMPERATURE && chargeRate <= MIN_TEMPERATURE+toleranceChargeRate) 
     {
         printf("Warning: Approaching discharge\n");
     }
-    else if (chargeRate =< MAX_CHARGERATE && chargeRate >= MAX_CHARGERATE-toleranceChargeRate)
+    else if (chargeRate <= MAX_CHARGERATE && chargeRate >= MAX_CHARGERATE-toleranceChargeRate)
     {
         printf("Warning: Approaching charge-peak\n");
     }
@@ -36,11 +36,11 @@ int isBatteryChargeRateOk(float chargeRate)
 int isBatteryChargeStateOk(float soc)
 {
     float toleranceChargeState=toleranceCheck(MAX_CHARGESTATE);
-    if(soc => MIN_CHARGESTATE && soc <= MIN_CHARGESTATE+toleranceChargeState) 
+    if(soc >= MIN_CHARGESTATE && soc <= MIN_CHARGESTATE+toleranceChargeState) 
     {
         printf("Warning: Approaching discharge\n");
     }
-    else if (soc =< MAX_CHARGESTATE && soc >= MAX_CHARGESTATE-toleranceChargeState)
+    else if (soc <= MAX_CHARGESTATE && soc >= MAX_CHARGESTATE-toleranceChargeState)
     {
         printf("Warning: Approaching charge-peak\n");
     }
@@ -57,11 +57,11 @@ int isBatteryChargeStateOk(float soc)
 int isBatteryTemperatureOk(float temperature)
 {
   float toleranceTemperature=toleranceCheck(MAX_TEMPERATURE);
-  if(temperature >= MIN_TEMPERATURE && temperature <= MIN_TEMPERATURE+toleranceTemperature) 
+  if(temperature >= MIN_TEMPERATURE && temperature <= (MIN_TEMPERATURE+toleranceTemperature)) 
   {
       printf("Warning: Approaching discharge\n");
   }
-  else if (temperature >= maxlimit && temperature <= MAX_TEMPERATURE-toleranceTemperature)
+  else if (temperature >= MAX_TEMPERATURE && temperature <= (MAX_TEMPERATURE-toleranceTemperature))
   {
       printf("Warning: Approaching charge-peak\n");
   } 
