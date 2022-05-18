@@ -1,14 +1,6 @@
 #include <stdio.h>
 #include <assert.h>
-
-#define MIN_TEMPERATURE 0
-#define MAX_TEMPERATURE 45
-#define MIN_CHARGESTATE 20
-#define WARNING_PERCENTAGE 5
-#define MAX_PERCENTAGE 100
-#define MAX_CHARGESTATE 80
-#define MAX_CHARGERATE 0.8
-
+#include <checker.h>
 void toleranceCheck(float currentValue, float minValue, float maxValue)
 {
     float toleranceValue=(WARNING_PERCENTAGE/MAX_PERCENTAGE)*maxValue;
