@@ -9,7 +9,7 @@
 #define MAX_CHARGESTATE 80
 #define MAX_CHARGERATE 0.8
 
-float toleranceCheck(float currentValue, float minValue, float maxValue)
+void toleranceCheck(float currentValue, float minValue, float maxValue)
 {
     float toleranceValue=(WARNING_PERCENTAGE/MAX_PERCENTAGE)*maxValue;
     if(currentValue >= minValue && currentValue <= minValue+toleranceValue) 
@@ -54,13 +54,11 @@ int isBatteryTemperatureOk(float temperature)
 
 int batteryIsOk(float temperature, float soc, float chargeRate) 
 {
-    int tempStatus = isBatteryTemperatureOk(temperature);
-    int socStatus = isBatteryChargeStateOk(soc);
-    int chargeRateStatus = isBatteryChargeRateOk(chargeRate);
-    if(tempStatus==0)
-     {
-        return 0;
-     }
+    int Status = isBatteryTemperatureOk(temperature)||isBatteryChargeStateOk(soc)||isBatteryChargeRateOk(chargeRate);
+    if(Status==0)
+    {
+       return 0;
+    }
      return 1 ;
 }
 
