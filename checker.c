@@ -1,4 +1,4 @@
-#include <Monitor.h>
+#include "batteryManagement.h"
 void toleranceCheck(float currentValue, float minValue, float maxValue)
 {
     float toleranceValue=(WARNING_PERCENTAGE/MAX_PERCENTAGE)*maxValue;
