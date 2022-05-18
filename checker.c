@@ -9,8 +9,6 @@
 #define MAX_CHARGESTATE 80
 #define MAX_CHARGERATE 0.8
 
-float tolerance=(WARNING_PERCENTAGE/MAX_PERCENTAGE)*maxlimit;
-
 float toleranceCheck(float maxlimit)
 {
     return ((WARNING_PERCENTAGE/MAX_PERCENTAGE)*maxlimit);
@@ -18,8 +16,16 @@ float toleranceCheck(float maxlimit)
 
 int isBatteryChargeRateOk(float chargeRate)
 {
-    float warningTolerance=toleranceCheck(MAX_CHARGERATE);
-    if(chargeRate > MAX_CHARGERATE)
+    float toleranceChargeRate=toleranceCheck(MAX_CHARGERATE);
+    if(chargeRate => MIN_TEMPERATURE && chargeRate <= MIN_TEMPERATURE+toleranceChargeRate) 
+    {
+        printf("Warning: Approaching discharge\n");
+    }
+    else if (chargeRate =< MAX_CHARGERATE && chargeRate >= MAX_CHARGERATE-toleranceChargeRate)
+    {
+        printf("Warning: Approaching charge-peak\n");
+    }
+    else if(chargeRate > MAX_CHARGERATE)
     {
         printf("Charge Rate out of range!\n");
         return 0;
@@ -29,12 +35,12 @@ int isBatteryChargeRateOk(float chargeRate)
 
 int isBatteryChargeStateOk(float soc)
 {
-    float warningTolerance=toleranceCheck(MAX_CHARGESTATE);
-    if(soc => MIN_CHARGESTATE && soc <= MIN_CHARGESTATE+warningTolerance) 
+    float toleranceChargeState=toleranceCheck(MAX_CHARGESTATE);
+    if(soc => MIN_CHARGESTATE && soc <= MIN_CHARGESTATE+toleranceChargeState) 
     {
         printf("Warning: Approaching discharge\n");
     }
-    else if (soc =< MAX_CHARGESTATE && soc >= MAX_CHARGESTATE-warningTolerance)
+    else if (soc =< MAX_CHARGESTATE && soc >= MAX_CHARGESTATE-toleranceChargeState)
     {
         printf("Warning: Approaching charge-peak\n");
     }
@@ -51,11 +57,11 @@ int isBatteryChargeStateOk(float soc)
 int isBatteryTemperatureOk(float temperature)
 {
   float toleranceTemperature=toleranceCheck(MAX_TEMPERATURE);
-  if(temperature => MIN_TEMPERATURE && temperature <= MIN_TEMPERATURE+toleranceTemperature) 
+  if(temperature >= MIN_TEMPERATURE && temperature <= MIN_TEMPERATURE+toleranceTemperature) 
   {
       printf("Warning: Approaching discharge\n");
   }
-  else if (temperature => maxlimit && temperature <= MAX_TEMPERATURE-toleranceTemperature)
+  else if (temperature >= maxlimit && temperature <= MAX_TEMPERATURE-toleranceTemperature)
   {
       printf("Warning: Approaching charge-peak\n");
   } 
