@@ -1,5 +1,3 @@
-#include <stdio.h>
-#include <assert.h>
 #include <checker.h>
 void toleranceCheck(float currentValue, float minValue, float maxValue)
 {
