@@ -12,11 +12,11 @@
 float toleranceCheck(float currentValue, float minValue, float maxValue)
 {
     float toleranceValue=(WARNING_PERCENTAGE/MAX_PERCENTAGE)*maxValue;
-    if(currentValue >= minvalue && currentValue <= minValue+toleranceChargeRate) 
+    if(currentValue >= minvalue && currentValue <= minValue+toleranceValue) 
     {
         printf("Warning: Approaching discharge\n");
     }
-    else if (currentValue <= MAX_CHARGERATE && currentValue >= maxValue-toleranceChargeRate)
+    else if (currentValue <= MAX_CHARGERATE && currentValue >= maxValue-toleranceValue)
     {
         printf("Warning: Approaching charge-peak\n");
     }
