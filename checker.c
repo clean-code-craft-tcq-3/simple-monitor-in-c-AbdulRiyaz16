@@ -8,7 +8,7 @@
 #define MAX_PERCENTAGE 100
 #define MAX_CHARGESTATE 80
 #define MAX_CHARGERATE 0.8
-#define toleranceBaseValue(float maxlimit) ((WARNING_PERCENTAGE/MAX_PERCENTAGE)*maxlimit)
+#define toleranceBaseValue(maxlimit) ((WARNING_PERCENTAGE/MAX_PERCENTAGE)*maxlimit)
 
 void toleranceCheck(float CurrentValue, float toleranceBaseValue)
 {
@@ -16,7 +16,7 @@ void toleranceCheck(float CurrentValue, float toleranceBaseValue)
   {
       printf("Warning: Approaching Temperature below thershold\n");
   }
-  else if (temperature >= MAX_TEMPERATURE && CurrentValue <= (MAX_TEMPERATURE-toleranceBaseValue))
+  else if (CurrentValue >= MAX_TEMPERATURE && CurrentValue <= (MAX_TEMPERATURE-toleranceBaseValue))
   {
       printf("Warning: Approaching Temperature peak thershold\n");
   } 
