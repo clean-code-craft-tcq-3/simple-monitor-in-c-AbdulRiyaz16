@@ -2,7 +2,7 @@
 #include <assert.h>
 
 enum languages{English=1,German=2};
-enum languages languageSupport;
+enum languages languagePreffered;
 
 #define MIN_TEMPERATURE 0
 #define MAX_TEMPERATURE 45
