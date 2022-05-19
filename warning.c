@@ -25,11 +25,9 @@ int warning(float value,float minValue,float maxValue)
 void printTemperaturewarning(int Temperaturewarning)
 {
   if(languagePreffered==English)
-  (Temperaturewarning==1) ? printf("Warning: Battery Temperature approaching lower limit\n") : ((Temperaturewarning==2)? printf("Warning: Battery Temperature approaching higher limit\n") : printf("No warning for temperature\n"));
-  
+  printf("Battery Temperature ");
   else if(languagePreffered==German)
-  (Temperaturewarning==1) ? printf("Warnung: Batterietemperatur nähert sich dem unteren Grenzwert\n") : ((Temperaturewarning==2)? printf("Warnung: Batterietemperatur nähert sich dem oberen Grenzwert\n") : printf("Keine Frühwarnung für Temperatur\n")); 
-     
+  printf("Batterie Ladezustand");
 }
 void printsocwarning(int socwarning)
 {
