@@ -1,6 +1,9 @@
 #include <stdio.h>
 #include <assert.h>
 
+enum languages{English=1,German=2};
+enum languages languageSupport;
+
 #define MIN_TEMPERATURE 0
 #define MAX_TEMPERATURE 45
 #define MIN_CHARGESTATE 20
