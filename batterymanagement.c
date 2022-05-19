@@ -32,6 +32,7 @@ int isBatteryTemperatureOk(float temperature)
 
 int main() {
   languagePreffered=English;
+  assert(isBatteryTemperatureOk(23));
   assert(isBatteryTemperatureOk(25));
   assert(!isBatteryTemperatureOk(50));
   assert(!isBatteryTemperatureOk(-1));
@@ -42,6 +43,7 @@ int main() {
   assert(isBatteryChargeRateOk(0.8));
   assert(isBatteryChargeRateOk(0.7));
   languagePreffered=German;
+  assert(isBatteryTemperatureOk(23));
   assert(isBatteryTemperatureOk(25));
   assert(!isBatteryTemperatureOk(50));
   assert(!isBatteryTemperatureOk(-1));
