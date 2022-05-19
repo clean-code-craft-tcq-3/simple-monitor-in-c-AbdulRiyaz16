@@ -39,7 +39,7 @@ void printsocwarning(int)
   printf("Batterie Ladezustand");
 
 }
-void printTemperaturewarning(int)
+void printchargeratewarning(int)
 {
    if(languagePreffered==English)
   printf("Battery Temperature ");
