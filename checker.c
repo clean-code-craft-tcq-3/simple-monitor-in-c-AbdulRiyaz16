@@ -1,20 +1,25 @@
 #include "batterymanagement.h"
 
-float toleranceBaseValue(float maxlimit)
+int isBatteryChargeRateOk(float chargeRate)
 {
-    return ((WARNING_PERCENTAGE/MAX_PERCENTAGE)*maxlimit);
+    if(chargeRate > MAX_CHARGERATE)
+    {
+        printf("Charge Rate out of range!\n");
+        return 0;
+    }
+    return 1;
 }
-void toleranceCheck(float CurrentValue, float toleranceBaseValue)
+
+int isBatteryChargeStateOk(float soc)
 {
-  if(CurrentValue >= MIN_TEMPERATURE && CurrentValue <= MIN_TEMPERATURE+toleranceBaseValue) 
-  {
-      printf("Warning: Approaching Temperature below thershold\n");
-  }
-  else if (CurrentValue >= MAX_TEMPERATURE && CurrentValue <= MAX_TEMPERATURE-toleranceBaseValue)
-  {
-      printf("Warning: Approaching Temperature peak thershold\n");
-  } 
+    if(soc < MIN_CHARGESTATE || soc > MAX_CHARGESTATE) 
+    {
+        printf("State of Charge out of range!\n");
+        return 0;
+    }
+    return 1;
 }
+
 
 int isBatteryTemperatureOk(float temperature)
 {
@@ -30,4 +35,10 @@ int main() {
   assert(isBatteryTemperatureOk(25));
   assert(!isBatteryTemperatureOk(50));
   assert(!isBatteryTemperatureOk(-1));
+  assert(isBatteryChargeStateOk(25));
+  assert(!isBatteryChargeStateOk(90));
+  assert(!isBatteryChargeStateOk(10));
+  assert(!isBatteryChargeRateOk(1.0));
+  assert(!isBatteryChargeRateOk(0.8));
+  assert(isBatteryChargeRateOk(0.7));
 }
