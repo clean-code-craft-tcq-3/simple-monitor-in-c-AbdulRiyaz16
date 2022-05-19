@@ -20,3 +20,4 @@ void printchargeratewarning1(int chargeratewarning);
 void printTemperaturewarning2(int Temperaturewarning);
 void printsocwarning2(int socwarning);
 void printchargeratewarning2(int chargeratewarning);
+int batteryIsOk(float temperature, float soc, float chargeRate);
