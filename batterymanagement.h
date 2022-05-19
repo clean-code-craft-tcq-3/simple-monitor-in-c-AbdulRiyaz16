@@ -11,3 +11,4 @@
 
 float toleranceBaseValue(float maxlimit);
 int toleranceCheck(float value,float minValue,float maxValue);
+void Warning(float value,float minValue,float maxValue);
