@@ -13,7 +13,10 @@ enum languages languagePreffered;
 #define MAX_CHARGERATE 0.8
 
 int toleranceCheck(float value,float minValue,float maxValue);
-int warning(float value,float minValue,float maxValue);
-void printTemperaturewarning(int Temperaturewarning);
-void printsocwarning(int socwarning);
-void printchargeratewarning(int chargeratewarning);
+int thresholdWarning(float value,float minValue,float maxValue);
+void printTemperaturewarning1(int Temperaturewarning);
+void printsocwarning1(int socwarning);
+void printchargeratewarning1(int chargeratewarning);
+void printTemperaturewarning2(int Temperaturewarning);
+void printsocwarning2(int socwarning);
+void printchargeratewarning2(int chargeratewarning);
