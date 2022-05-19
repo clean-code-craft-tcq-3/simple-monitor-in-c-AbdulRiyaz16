@@ -39,7 +39,7 @@ int main() {
   assert(!isBatteryChargeStateOk(90));
   assert(!isBatteryChargeStateOk(10));
   assert(!isBatteryChargeRateOk(1.0));
-  assert(!isBatteryChargeRateOk(0.8));
+  assert(isBatteryChargeRateOk(0.8));
   assert(isBatteryChargeRateOk(0.7));
   languagePreffered=German;
   assert(isBatteryTemperatureOk(25));
@@ -49,6 +49,6 @@ int main() {
   assert(!isBatteryChargeStateOk(90));
   assert(!isBatteryChargeStateOk(10));
   assert(!isBatteryChargeRateOk(1.0));
-  assert(!isBatteryChargeRateOk(0.8));
+  assert(isBatteryChargeRateOk(0.8));
   assert(isBatteryChargeRateOk(0.7));
 }
