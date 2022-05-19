@@ -2,15 +2,14 @@
 
 int toleranceCheck(float value,float minValue,float maxValue)
 {
-   warning(value,minValue,maxValue);
-  if (value < minValue|| value > maxValue) 
+   if (value < minValue|| value > maxValue) 
   {
      return 0;
   }
   return 1;
 }
 
-void warning(float value,float minValue,float maxValue)
+int warning(float value,float minValue,float maxValue)
 {
   float toleranceBaseValue=(WARNING_PERCENTAGE/MAX_PERCENTAGE)*maxValue;
   if(minValue<=value<=minValue+toleranceBaseValue)
