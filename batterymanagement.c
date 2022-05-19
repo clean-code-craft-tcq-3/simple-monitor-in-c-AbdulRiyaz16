@@ -24,11 +24,10 @@ int isBatteryChargeStateOk(float soc)
 
 int isBatteryTemperatureOk(float temperature)
 {
-  if(languagePreffered==English)
-  printf("Battery Temperature ");
-  else if(languagePreffered==German)
-  printf("Batterietemperatur ");
   int Temperaturewarning=warning(temperature,MIN_TEMPERATURE,MAX_TEMPERATURE);
+  if(languagePreffered==English)
+  printTemperaturewarning(Temperaturewarning);
+  else if(languagePreffered==German)
   printTemperaturewarning(Temperaturewarning);
   return toleranceCheck(temperature,MIN_TEMPERATURE,MAX_TEMPERATURE);
 }
