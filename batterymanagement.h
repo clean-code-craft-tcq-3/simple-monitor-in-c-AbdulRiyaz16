@@ -8,3 +8,6 @@
 #define MAX_PERCENTAGE 100
 #define MAX_CHARGESTATE 80
 #define MAX_CHARGERATE 0.8
+
+float toleranceBaseValue(float maxlimit);
+void toleranceCheck(float CurrentValue, float toleranceBaseValue);
