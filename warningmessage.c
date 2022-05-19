@@ -2,20 +2,13 @@
 
 void printTemperaturewarning(int Temperaturewarning)
 {
-   (Temperaturewarning==1) ? printf("Warning: Battery Temperature approaching lower limit\n") : ((Temperaturewarning==2)? printf("Warning: Battery Temperature approaching higher limit\n") : printf("No warning for temperature\n"));
+   (Temperaturewarning==1) ? printf("Warning: Battery Temperature approaching lower limit\n") : ((Temperaturewarning==2)? printf("Warning: Battery Temperature approaching higher limit\n") : printf("No Early warning for Battery temperature\n"));
 }
 void printsocwarning(int socwarning)
 {
-  if(languagePreffered==English)
-  printf("Battery Temperature ");
-  else if(languagePreffered==German)
-  printf("Batterie Ladezustand");
-
+  (socwarning==1) ? printf("Warning: Battery Approaching discharge\n") : ((socwarning==2)? printf("Warning: Warning: Battery Approaching charge-peak\n") : printf("No Early warning for Battery SOC\n"));
 }
 void printchargeratewarning(int chargeratewarning)
 {
-   if(languagePreffered==English)
-  printf("Battery Temperature ");
-  else if(languagePreffered==German)
-  printf("Batterie Ladezustand");
+   (chargeratewarning==1) ? printf("Warning: Battery Charge rate approaching lower limit\n") : ((chargeratewarning==2)? printf("Warning: Battery Charge rate approaching higher limit\n") : printf("No early warning for Battery charge rate\n"));
 }
