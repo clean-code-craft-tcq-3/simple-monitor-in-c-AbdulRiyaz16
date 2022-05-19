@@ -2,10 +2,7 @@
 
 void printTemperaturewarning(int Temperaturewarning)
 {
-  if(languagePreffered==English)
    (Temperaturewarning==1) ? printf("Warning: Battery Temperature approaching lower limit\n") : ((Temperaturewarning==2)? printf("Warning: Battery Temperature approaching higher limit\n") : printf("No warning for temperature\n"));
-  else if(languagePreffered==German)
-  printf("Batterie Ladezustand");
 }
 void printsocwarning(int socwarning)
 {
