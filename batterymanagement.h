@@ -10,4 +10,4 @@
 #define MAX_CHARGERATE 0.8
 
 float toleranceBaseValue(float maxlimit);
-int toleranceCheck(float value,float minValue,float maxValue)
+int toleranceCheck(float value,float minValue,float maxValue);
