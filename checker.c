@@ -8,9 +8,12 @@
 #define MAX_PERCENTAGE 100
 #define MAX_CHARGESTATE 80
 #define MAX_CHARGERATE 0.8
-#define toleranceBaseValue(maxlimit) ((WARNING_PERCENTAGE/MAX_PERCENTAGE)*maxlimit)
 
-void toleranceCheck(float *CurrentValue, float *toleranceBaseValue)
+float toleranceBaseValue(float maxlimit)
+{
+    return ((WARNING_PERCENTAGE/MAX_PERCENTAGE)*maxlimit);
+}
+void toleranceCheck(float CurrentValue, float toleranceBaseValue)
 {
   if(CurrentValue >= MIN_TEMPERATURE && CurrentValue <= MIN_TEMPERATURE+toleranceBaseValue) 
   {
