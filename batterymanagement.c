@@ -1,7 +1,23 @@
 #include "batterymanagement.h"
+int isBatteryChargeRateOk(float chargeRate)
+{
+   toleranceCheck(chargeRate,0,MAX_CHARGERATE);
+}
+
+int isBatteryChargeStateOk(float soc)
+{
+   toleranceCheck(soc,MIN_CHARGESTATE,MAX_CHARGESTATE);
+}
+
+
+int isBatteryTemperatureOk(float temperature)
+{
+  toleranceCheck(temperature,MIN_TEMPERATURE,MAX_TEMPERATURE);
+}
+
 
 int main() {
-  assert(toleranceCheck(25,MIN_TEMPERATURE,MAX_TEMPERATURE));
+  assert(toleranceCheck(80,MIN_TEMPERATURE,MAX_TEMPERATURE));
   assert(!toleranceCheck(50,MIN_TEMPERATURE,MAX_TEMPERATURE));
   assert(!toleranceCheck(-1,MIN_TEMPERATURE,MAX_TEMPERATURE));
   assert(toleranceCheck(25,MIN_CHARGESTATE,MAX_CHARGESTATE));
