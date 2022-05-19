@@ -12,6 +12,5 @@ enum languages languagePreffered;
 #define MAX_CHARGESTATE 80
 #define MAX_CHARGERATE 0.8
 
-float toleranceBaseValue(float maxlimit);
 int toleranceCheck(float value,float minValue,float maxValue);
 void warning(float value,float minValue,float maxValue);
