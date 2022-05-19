@@ -2,7 +2,6 @@
 
 void printTemperaturewarning(int Temperaturewarning)
 {
-  if(1)
   (Temperaturewarning==1) ? printf("Warning: Battery Temperature approaching lower limit\n") : ((Temperaturewarning==2)? printf("Warning: Battery Temperature approaching higher limit\n") : printf("No Early warning for Battery temperature\n"));
 }
 void printsocwarning(int socwarning)
