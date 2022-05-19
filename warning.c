@@ -7,6 +7,16 @@ float toleranceBaseValue(float maxlimit)
 
 int toleranceCheck(float value,float minValue,float maxValue)
 {
+  Warning(value, minValue, maxValue);
+  if (value < minValue|| value > maxValue) 
+  {
+     return 0;
+  }
+  return 1;
+}
+
+void Warning(float value,float minValue,float maxValue)
+{
   float toleranceValue=toleranceBaseValue(maxValue);
   if(value >= minValue && value <= minValue+toleranceValue) 
   {
@@ -16,9 +26,6 @@ int toleranceCheck(float value,float minValue,float maxValue)
   {
         printf("Warning: Approaching charge-peak\n");
   }
-  else if (value < minValue|| value > maxValue) 
-  {
-     return 0;
-  }
-  return 1;
+    
 }
+
