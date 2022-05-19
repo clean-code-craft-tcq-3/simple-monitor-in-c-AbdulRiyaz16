@@ -7,10 +7,9 @@ float toleranceBaseValue(float maxlimit)
 
 int toleranceCheck(float value,float minValue,float maxValue)
 {
-  int alertcount=0;
   if (value < minValue|| value > maxValue) 
   {
-     alertcount=1;
+     return 0;
   }
-  return alertcount;
+  return 1;
 }
