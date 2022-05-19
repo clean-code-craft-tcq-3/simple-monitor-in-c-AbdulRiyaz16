@@ -14,4 +14,4 @@ enum languages languagePreffered;
 
 float toleranceBaseValue(float maxlimit);
 int toleranceCheck(float value,float minValue,float maxValue);
-
+void warning(float value,float minValue,float maxValue);
