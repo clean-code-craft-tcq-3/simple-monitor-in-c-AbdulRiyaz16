@@ -5,12 +5,12 @@ int isBatteryChargeRateOk(float chargeRate)
   if(languagePreffered==English)
   {  
     printf("Battery ChargeRate");
-    printchargeratewarning(ChargeRatewarning);
+    printchargeratewarning1(ChargeRatewarning);
   }
   else if(languagePreffered==German)
   {
     printf("Batterie laderate ");
-    printchargeratewarning(ChargeRatewarning);
+    printchargeratewarning2(ChargeRatewarning);
   }
   return toleranceCheck(chargeRate,0,MAX_CHARGERATE);
 }
@@ -21,12 +21,12 @@ int isBatteryChargeStateOk(float soc)
   if(languagePreffered==English)
   {
     printf("Battery ChargeState ");
-    printsocwarning(ChargeStatewarning);
+    printsocwarning1(ChargeStatewarning);
   }
   else if(languagePreffered==German)
   {
     printf("Batterie Ladezustand");
-    printsocwarning(ChargeStatewarning);
+    printsocwarning2(ChargeStatewarning);
   }
   return toleranceCheck(soc,MIN_CHARGESTATE,MAX_CHARGESTATE);
 }
@@ -38,12 +38,12 @@ int isBatteryTemperatureOk(float temperature)
   if(languagePreffered==English)
   {
     printf("Battery Temperature ");
-    printTemperaturewarning(Temperaturewarning);
+    printTemperaturewarning1(Temperaturewarning);
   }
   else if(languagePreffered==German)
   {
     printf("Batterietemperatur");
-    printTemperaturewarning(Temperaturewarning);
+    printTemperaturewarning2(Temperaturewarning);
   }
   return toleranceCheck(temperature,MIN_TEMPERATURE,MAX_TEMPERATURE);
 }
