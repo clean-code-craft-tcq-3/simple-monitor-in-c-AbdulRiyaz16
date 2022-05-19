@@ -8,7 +8,15 @@ float toleranceBaseValue(float maxlimit)
 int toleranceCheck(float value,float minValue,float maxValue)
 {
   float toleranceValue=toleranceBaseValue(maxValue);
-  if (value < minValue|| value > maxValue) 
+  if(value >= minValue && value <= minValue+toleranceChargeRate) 
+  {
+        printf("Warning: Approaching discharge\n");
+  }
+  else if (value <= maxValue && value >= maxValue-toleranceChargeRate)
+  {
+        printf("Warning: Approaching charge-peak\n");
+  }
+  else if (value < minValue|| value > maxValue) 
   {
      return 0;
   }
