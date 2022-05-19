@@ -12,11 +12,11 @@
 
 void toleranceCheck(float CurrentValue, float toleranceBaseValue)
 {
-  if(CurrentValue >= MIN_TEMPERATURE && temperature <= (MIN_TEMPERATURE+toleranceBaseValue)) 
+  if(CurrentValue >= MIN_TEMPERATURE && CurrentValue <= (MIN_TEMPERATURE+toleranceBaseValue)) 
   {
       printf("Warning: Approaching Temperature below thershold\n");
   }
-  else if (temperature >= MAX_TEMPERATURE && temperature <= (MAX_TEMPERATURE-toleranceBaseValue))
+  else if (temperature >= MAX_TEMPERATURE && CurrentValue <= (MAX_TEMPERATURE-toleranceBaseValue))
   {
       printf("Warning: Approaching Temperature peak thershold\n");
   } 
@@ -25,22 +25,13 @@ void toleranceCheck(float CurrentValue, float toleranceBaseValue)
 int isBatteryTemperatureOk(float temperature)
 {
   float toleranceTemperature=toleranceBaseValue(MAX_TEMPERATURE);
-  toleranceCheck(temperature, toleranceTemperature)  
+  toleranceCheck(temperature, toleranceTemperature);
   if(temperature < MIN_TEMPERATURE || temperature > MAX_TEMPERATURE)
   {
     printf("Temperature out of range!\n");
     return 0;
   }
   return 1;
-}
-int batteryIsOk(float temperature, float soc, float chargeRate) 
-{
-   int tempStatus = isBatteryTemperatureOk(temperature);
-   if(tempStatus==0)
-   {
-      return 0;
-   }
-  return 1 ;
 }
 int main() {
   assert(isBatteryTemperatureOk(25));
