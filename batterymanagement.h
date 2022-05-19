@@ -14,6 +14,6 @@ enum languages languagePreffered;
 
 int toleranceCheck(float value,float minValue,float maxValue);
 int warning(float value,float minValue,float maxValue);
-void printTemperaturewarning(int);
-void printsocwarning(int);
-void printTemperaturewarning(int);
+void printTemperaturewarning(int Temperaturewarning);
+void printsocwarning(int socwarning);
+void printchargeratewarning(int chargeratewarning);
