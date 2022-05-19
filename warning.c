@@ -9,7 +9,7 @@ int toleranceCheck(float value,float minValue,float maxValue)
   return 1;
 }
 
-int warning(float value,float minValue,float maxValue)
+int thresholdWarning(float value,float minValue,float maxValue)
 {
   float toleranceBaseValue=(WARNING_PERCENTAGE/MAX_PERCENTAGE)*maxValue;
   if(minValue<=value<=minValue+toleranceBaseValue)
