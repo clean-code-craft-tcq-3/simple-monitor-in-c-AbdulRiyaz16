@@ -1,7 +1,7 @@
 #include "batterymanagement.h"
 int isBatteryChargeRateOk(float chargeRate)
 {
-  int ChargeRatewarning=warning(chargeRate,0,MAX_CHARGERATE);
+  int ChargeRatewarning=thresholdWarning(chargeRate,0,MAX_CHARGERATE);
   if(languagePreffered==English)
   {  
     printf("Battery ChargeRate");
@@ -17,7 +17,7 @@ int isBatteryChargeRateOk(float chargeRate)
 
 int isBatteryChargeStateOk(float soc)
 {
-  int ChargeStatewarning=warning(soc,MIN_CHARGESTATE,MAX_CHARGESTATE);
+  int ChargeStatewarning=thresholdWarning(soc,MIN_CHARGESTATE,MAX_CHARGESTATE);
   if(languagePreffered==English)
   {
     printf("Battery ChargeState ");
@@ -34,7 +34,7 @@ int isBatteryChargeStateOk(float soc)
 
 int isBatteryTemperatureOk(float temperature)
 {
-  int Temperaturewarning=warning(temperature,MIN_TEMPERATURE,MAX_TEMPERATURE);
+  int Temperaturewarning=thresholdWarning(temperature,MIN_TEMPERATURE,MAX_TEMPERATURE);
   if(languagePreffered==English)
   {
     printf("Battery Temperature ");
