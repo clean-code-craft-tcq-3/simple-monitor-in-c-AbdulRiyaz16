@@ -13,4 +13,14 @@ void printchargeratewarning1(int chargeratewarning)
    (chargeratewarning==1) ? printf("Warning: Battery Charge rate approaching lower limit\n") : ((chargeratewarning==2)? printf("Warning: Battery Charge rate approaching higher limit\n") : printf("No early warning for Battery charge rate\n"));
 }
 
-
+void Batterywarning(int status)
+{
+  if(status!=1)
+  {
+    printf("Battery status is okay\n");
+  }
+  else
+  {
+    printf("Battery status not okay\n");;
+  }
+}
