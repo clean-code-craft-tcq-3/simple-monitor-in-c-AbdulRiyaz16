@@ -1,17 +1,31 @@
 #include "batterymanagement.h"
 int isBatteryChargeRateOk(float chargeRate)
 {
+  if(languagePreffered==English)
+  printf("Battery ChargeRate");
+  else if(languagePreffered==German)
+  printf("Batterie laderate ");
+
   return toleranceCheck(chargeRate,0,MAX_CHARGERATE);
 }
 
 int isBatteryChargeStateOk(float soc)
 {
+  if(languagePreffered==English)
+  printf("Battery Temperature ");
+  else if(languagePreffered==German)
+  printf("Batterie Ladezustand");
+
   return toleranceCheck(soc,MIN_CHARGESTATE,MAX_CHARGESTATE);
 }
 
 
 int isBatteryTemperatureOk(float temperature)
 {
+  if(languagePreffered==English)
+  printf("Battery Temperature ");
+  else if(languagePreffered==German)
+  printf("Batterietemperatur ");
   return toleranceCheck(temperature,MIN_TEMPERATURE,MAX_TEMPERATURE);
 }
 
